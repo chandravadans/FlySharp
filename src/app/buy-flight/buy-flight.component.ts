@@ -11,6 +11,7 @@ export class BuyFlightComponent implements OnInit {
 
   flights : Flight[];
   showBuyFlights = true;
+  selectedFlight: Flight;
 
   constructor(private flightsService : FlightsService ){}
 
@@ -21,6 +22,11 @@ export class BuyFlightComponent implements OnInit {
   onClickBuyFlights(){
     this.showBuyFlights = !this.showBuyFlights;
   }
+
+  private onFlightClick(flight : Flight) {
+    this.selectedFlight = flight;
+  }
+
 }
 
 
