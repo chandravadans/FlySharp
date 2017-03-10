@@ -31,38 +31,37 @@
 <div class="row">
   <div class="form-outline col-md-12">
 
-    <form (ngSubmit)="onSubmit()" [formGroup]="payForm">
+    <form  (ngSubmit)="onSubmit()" [formGroup]="payForm">
       <div class="form-group">
         <label for="name">Name</label>
-        <input  [(ngModel)]="model.name" type="text" class="form-control" id="name" formControlName="name" placeholder="Name" >
+        <input   [(ngModel)]="model.name" type="text" class="form-control" id="name" formControlName="name" placeholder="Name" >
       </div>
       <div class="form-group">
         <label for="address">Address</label>
-        <textarea  [(ngModel)]="model.address" class="form-control" id="address" formControlName="address" placeholder="Address" rows="4"></textarea>
+        <textarea   [(ngModel)]="model.address" class="form-control" id="address" formControlName="address" placeholder="Address" rows="4"></textarea>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
         <input  [(ngModel)]="model.email" type="email" class="form-control" id="email" formControlName="email" placeholder="Email">
-        <div *ngIf="!payForm.controls.email.valid">Email is invalid!</div>
+        <div *ngIf="!payForm.controls.email.valid">You must provide a valid email address</div>
       </div>
       <div class="form-group">
         <label for="cardNum">Card Number</label>
-        <input  [(ngModel)]="model.cardNum" type="text" class="form-control" id="cardNum" formControlName="cardNum" placeholder="Card Number">
+        <input   [(ngModel)]="model.cardNum" type="text" class="form-control" id="cardNum" formControlName="cardNum" placeholder="Card Number">
       </div>
       <div class="form-group">
         <label for="cardType">Card Type</label>
-        <select  [(ngModel)]="model.cardType" type="text" class="form-control" id="cardType" formControlName="cardType" placeholder="Card Type">
+        <select   [(ngModel)]="model.cardType" type="text" class="form-control" id="cardType" formControlName="cardType" placeholder="Card Type">
           <option>VISA</option>
           <option>AMEX</option>
         </select>
       </div>
       <div class="form-group">
         <label for="expDate">Card Expiry</label>
-        <input  [(ngModel)]="model.expDate" type="month" class="form-control" id="expDate" formControlName="expDate">
+        <input   [(ngModel)]="model.expDate" type="month" class="form-control" id="expDate" formControlName="expDate">
       </div>
-      <button [disabled]="!payForm.valid" type="submit" class="btn btn-default">Buy Flight</button>
+      <button [disabled]="!payForm.valid" type="submit" class="btn btn-default"  >Buy Flight</button>
     </form>
   </div>
 </div>
-
 {{jsonModel}}
