@@ -9,6 +9,10 @@ import {By} from "@angular/platform-browser";
 import {Flight} from "../model/flight";
 import {FLIGHTS, MYFLIGHTS} from "../model/mock-flights";
 import { PaymentComponent } from '../payment/payment.component';
+import { FlightFilterComponent } from '../flight-filter/flight-filter.component';
+import { ActivatedRoute } from '@angular/router';
+import { ActivatedRouteStub } from '../router-stubs';
+import { CurrencyConversionPipe } from '../currency/currency-conversion.pipe';
 
 
 export class MockFlightsService {
@@ -25,6 +29,8 @@ export class MockFlightsService {
 
 }
 
+let activatedRoute = new ActivatedRouteStub();
+
 let mockFlightsService = new MockFlightsService();
 
 describe('Component: BuyFlight', () => {
@@ -35,10 +41,11 @@ describe('Component: BuyFlight', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        BuyFlightComponent, PaymentComponent
+        BuyFlightComponent, PaymentComponent, FlightFilterComponent, CurrencyConversionPipe
       ],
       providers: [{provide: FlightsService,
-      useValue: mockFlightsService }]
+      useValue: mockFlightsService },
+      {provide : ActivatedRoute, useValue: activatedRoute}]
 
     });
 

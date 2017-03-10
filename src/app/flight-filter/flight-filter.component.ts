@@ -1,23 +1,26 @@
 import {Component, OnInit, EventEmitter} from '@angular/core';
-import {Output} from "@angular/core/src/metadata/directives";
+import {Output, Input} from "@angular/core/src/metadata/directives";
 
 @Component({
   selector: 'app-flight-filter',
-  templateUrl: 'flight-filter.component.html',
-  styleUrls: ['flight-filter.component.css']
+  templateUrl: './flight-filter.component.html',
+  styleUrls: ['./flight-filter.component.css']
 })
 export class FlightFilterComponent implements OnInit {
+  @Input()
+  label : string;
 
-  constructor() { }
-
+  @Input()
+  initialValue : string = "";
+  
   @Output()
   onFilter = new EventEmitter<string>();
-
-  onFilterEnter(filterValue: string) {
-    this.onFilter.emit(filterValue);
-  }
+  constructor() { }
 
   ngOnInit() {
   }
 
+  private onFilterEnter( filterValue : string){
+    this.onFilter.emit(filterValue);
+  }
 }
