@@ -5,7 +5,7 @@ import { PaymentComponent } from './payment.component';
 
 describe('Component: Payment', () => {
   it('should create an instance', () => {
-    let component = new PaymentComponent();
+    let component = new PaymentComponent(null);
     expect(component).toBeTruthy();
   });
 });
