@@ -43,6 +43,7 @@
       <div class="form-group">
         <label for="email">Email</label>
         <input  [(ngModel)]="model.email" type="email" class="form-control" id="email" formControlName="email" placeholder="Email">
+        <div *ngIf="!payForm.controls.email.valid">Email is invalid!</div>
       </div>
       <div class="form-group">
         <label for="cardNum">Card Number</label>
@@ -64,4 +65,4 @@
   </div>
 </div>
 
-{{payForm.jsonModel}}
+{{jsonModel}}
