@@ -20,5 +20,8 @@ export class PaymentComponent implements OnInit {
   get jsonModel() {
     return JSON.stringify(this.model);
   }
+  onSubmit() {
+    alert(this.jsonModel);
+  }
 
 }

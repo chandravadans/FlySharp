@@ -29,7 +29,7 @@
 
   <div class="row">
     <div class="form-outline col-md-12">
-      <form #paymentForm="ngForm">
+      <form #paymentForm="ngForm" (submit)="onSubmit()">
 
         <div class="form-group">
           <label for="name">Name</label>
