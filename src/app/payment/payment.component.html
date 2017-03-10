@@ -31,7 +31,7 @@
 <div class="row">
   <div class="form-outline col-md-12">
 
-    <form (ngSubmit)="onSubmit()" formGroup="payForm">
+    <form (ngSubmit)="onSubmit()" [formGroup]="payForm">
       <div class="form-group">
         <label for="name">Name</label>
         <input  [(ngModel)]="model.name" type="text" class="form-control" id="name" formControlName="name" placeholder="Name" >
@@ -63,4 +63,5 @@
     </form>
   </div>
 </div>
-{{jsonModel}}
+
+{{payForm.jsonModel}}
