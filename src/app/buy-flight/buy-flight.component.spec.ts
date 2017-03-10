@@ -3,7 +3,7 @@
 
 import {BuyFlightComponent} from "./buy-flight.component";
 import {ComponentFixture, TestBed} from "@angular/core/testing";
-import {DebugElement} from "@angular/core";
+import { DebugElement, Component, Input } from '@angular/core';
 import {FlightsService} from "../services/flights.service";
 import {By} from "@angular/platform-browser";
 import {Flight} from "../model/flight";
@@ -33,6 +33,15 @@ let activatedRoute = new ActivatedRouteStub();
 
 let mockFlightsService = new MockFlightsService();
 
+@Component({
+    selector: 'app-payment',
+  template: '',
+})
+class MockPaymentComponent {
+  @Input() selectedFlight;
+}
+
+
 describe('Component: BuyFlight', () => {
   let comp: BuyFlightComponent;
   let fixture : ComponentFixture<BuyFlightComponent>;
@@ -41,7 +50,7 @@ describe('Component: BuyFlight', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        BuyFlightComponent, PaymentComponent, FlightFilterComponent, CurrencyConversionPipe
+        BuyFlightComponent, MockPaymentComponent, FlightFilterComponent, CurrencyConversionPipe
       ],
       providers: [{provide: FlightsService,
       useValue: mockFlightsService },

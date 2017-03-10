@@ -10,7 +10,6 @@ import {Payment} from "../model/payment";
 })
 export class PaymentComponent implements OnInit {
   @Input() selectedFlight: Flight;
-
   model: Payment = new Payment();
 
   constructor() { }
@@ -20,8 +19,8 @@ export class PaymentComponent implements OnInit {
   get jsonModel() {
     return JSON.stringify(this.model);
   }
-  onSubmit() {
+
+  onSubmit(): void {
     alert(this.jsonModel);
   }
-
 }

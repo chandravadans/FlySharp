@@ -5,7 +5,7 @@ import {BuyFlightComponent} from "./buy-flight/buy-flight.component";
 import {MyFlightsComponent} from "./my-flights/my-flights.component";
 import {AccountComponent} from "./account/account.component";
 import {ModuleWithProviders} from "@angular/core";
-export const routes: Routes = [
+const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',
@@ -17,11 +17,6 @@ export const routes: Routes = [
   },
   {
     path: 'buy',
-    component: BuyFlightComponent,
-    pathMatch: 'prefix'
-  },  
-  {
-    path: 'buy/:origin',
     component: BuyFlightComponent
   },
   {
@@ -35,4 +30,4 @@ export const routes: Routes = [
 ];
 
 
-
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

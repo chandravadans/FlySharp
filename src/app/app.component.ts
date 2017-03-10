@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FlightsService} from "./services/flights.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,6 @@ import {FlightsService} from "./services/flights.service";
 })
 export class AppComponent {
   title = "Welcome to Fly Sharp";
+
+  constructor(private router : Router){}
 }
